@@ -6,7 +6,7 @@ function Profile(){
 
     return (
         <React.Fragment>
-            <div className = "items-center flex-col justify-center h-screen">
+            <div className = "items-center flex-col justify-center">
                 <div className = "text-center px-20 py-10">
                 <h1 className ="text-4xl py-4 font-bold">Methasit Tantiplubtong</h1>
                 <h2 className = "text-xl pb-1">Nokia</h2>

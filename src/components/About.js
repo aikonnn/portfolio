@@ -11,8 +11,7 @@ function About(){
         code: `public class Greetings(){
     public static void main(String[] args){
         System.out.println("Hi!");
-        System.out.println("I used this to learn
-        Object-oriented programming!");
+        System.out.println("I used this to learn Object-oriented programming!");
     }
 }
 `
@@ -21,6 +20,11 @@ function About(){
     const python = {
         lang: 'python',
         code: `print("This is the start of, my journey!")
+
+#this is where i built my basics
+set_of_skills = set([
+    conditionals, loops, basic algorithms, debugging
+])
 `
     }
 
@@ -45,11 +49,11 @@ function About(){
 `
     }
 
-    const [codeBlock, setCode] = useState(java);
+    const [codeBlock, setCode] = useState(python);
 
     return (
         <React.Fragment>
-            <div className ="bg-gradient-to-b from-white to-gray-300 flex-col items-center px-10 justify-center h-screen">
+            <div className ="bg-gradient-to-b from-white to-gray-300 flex-col items-center px-10 justify-center">
                 <div className ="p-10 bg-white shadow-md max-w-3xl mx-auto">
                     
                     <h1 className ="text-xl pb-8">
@@ -69,18 +73,18 @@ function About(){
                     </h1>
                     </div>
                     <div className ='flex justify-evenly pb-5'>
-                    <button onClick={() => setCode(java)}>
-                    <IconContext.Provider value={{ className: "w-10 h-10 hover:text-red-500 hover:-translate-y-1 hover:scale-110" }}>
-                        <div>
-                            <DiJava />
-                        </div>
-                    </IconContext.Provider>
-                    </button>
-
                     <button onClick={() => setCode(python)}>
                     <IconContext.Provider value={{ className: "w-10 h-10 hover:text-yellow-700 hover:-translate-y-1 hover:scale-110" }}>
                         <div>
                             <DiPython />
+                        </div>
+                    </IconContext.Provider>
+                    </button>
+                    
+                    <button onClick={() => setCode(java)}>
+                    <IconContext.Provider value={{ className: "w-10 h-10 hover:text-red-500 hover:-translate-y-1 hover:scale-110" }}>
+                        <div>
+                            <DiJava />
                         </div>
                     </IconContext.Provider>
                     </button>
@@ -114,8 +118,21 @@ function About(){
                     </IconContext.Provider>
                     </div>
 
-                    <div>
-                        <SyntaxHighlighter language={codeBlock.lang}  style={a11yDark} wrapLongLines={true}>
+                    <div className=''>
+                        <SyntaxHighlighter language={codeBlock.lang}  style={a11yDark} customStyle = {{
+                            lineHeight: "1.5",
+                            fontSize: "0.9em",
+                            height: "200px",
+                            padding:"20px",
+                            borderRadius:"10px"
+                            }}
+
+                            codeTagProps = {{
+                            style: {
+                            lineHeight: "inherit",
+                            fontSize: "inherit"
+                            }}
+                            }>
                             {codeBlock.code}
                         </SyntaxHighlighter>
                     </div>
